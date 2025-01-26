@@ -22,8 +22,18 @@ class Trade(models.Model):
 	
 	class TradeManager(models.Manager):
 
-		def create(self, journal, trading_model, entry_model, risk_appetite, riskreward_profile, order_type, fill_price=None, stoploss_price=None, takeprofit_price=None, execution_time=None, exit_time=None):
+		def create(self,
+			symbol,
+			journal, trading_model, entry_model,
+			risk_appetite, riskreward_profile,
+			order_type,
+			fill_price=None, exit_price=None,
+			stoploss_price=None, takeprofit_price=None,
+			execution_time=None, exit_time=None,
+			trade_review=None,
+		):
 			model = self.model(
+				symbol=symbol,
 				journal=journal,
 				trading_model=trading_model,
 				entry_model=entry_model,
@@ -31,10 +41,12 @@ class Trade(models.Model):
 				riskreward_profile=riskreward_profile,
 				order_type=order_type,
 				fill_price=fill_price,
+				exit_price=exit_price,
 				stoploss_price=stoploss_price,
 				takeprofit_price=takeprofit_price,
 				execution_time=execution_time,
 				exit_time=exit_time,
+				trade_review=trade_review,
 			)
 			model.save(using=self._db)
 			return model
@@ -47,6 +59,7 @@ class Trade(models.Model):
 
 
 	# To be replaced by ForeignKeys to actual models
+	symbol	 							= models.CharField(verbose_name="symbol", max_length=50, null=False, blank=False)
 	journal 							= models.CharField(verbose_name="journal", max_length=50, null=False, blank=False)
 	trading_model 						= models.CharField(verbose_name="trading model", max_length=50, null=False, blank=False)
 	entry_model  						= models.CharField(verbose_name="entry model", max_length=50, null=False, blank=False)

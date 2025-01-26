@@ -21,17 +21,19 @@ class TradeSerializer(serializers.ModelSerializer):
 			"takeprofit_price",
 			"execution_time",
 			"exit_time",
-
 			"outcome",
 			"trade_review",
+
 			
 			# Yet to be relational fields
+			"symbol",
 			"journal",
 			"trading_model",
 			"entry_model",
 		)
 		read_only_fields = (
 			"id",
+			"outcome",
 		)
 
 	def update(self, instance, validated_data):
