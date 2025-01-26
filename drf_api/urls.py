@@ -16,6 +16,8 @@ urlpatterns = [
 
     path('account/', include('core.apps.account.urls', namespace="account")),
     path('trade/', include('core.apps.trade.urls', namespace="trade")),
+
+    path('misc/', include('core.apps.misc.urls', namespace="misc")),
     # Password related views using 3rd party app
     # re_path(r'^password-reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,32})/$',
     #     TemplateView.as_view(template_name="account/password-reset/password_reset_email.html"),

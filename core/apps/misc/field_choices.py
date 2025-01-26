@@ -30,3 +30,6 @@ class TradeOutcomes(TextChoices):
 	IN_PROGRESS = "INP", _("In progress")
 	WIN = "WIN", _("Win")
 	LOSS = "LOS", _("Loss")
+
+class FormIDs(TextChoices):
+	ADD_TRADE = "ADT", _("Add Trade")
