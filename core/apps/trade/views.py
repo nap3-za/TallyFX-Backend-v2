@@ -17,13 +17,13 @@ from .models import (
 
 
 class TradeViewSetPagination(pagination.PageNumberPagination):
-	page_size = 10
+	page_size = 5
 	page_size_query_param = "size"
-	max_page_size = 25
+	max_page_size = 5
 
 class TradeViewSet(viewsets.ModelViewSet):
 
-	queryset = Trade.objects.all().order_by("-execution_time")
+	queryset = Trade.objects.all()
 	serializer_class = TradeSerializer
 	pagination_class = TradeViewSetPagination
 

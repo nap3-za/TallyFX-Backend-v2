@@ -16,25 +16,25 @@ class RetrieveFieldChoices(generics.GenericAPIView):
 
 		if form_id == FormIDs.ADD_TRADE:
 			field_choices["symbols"] = {
-				"NSQ": "Nasdaq",
-				"DOW": "Dow Jones",
-				"SPY": "Standards & Poors",
+				"Nasdaq": "Nasdaq",
+				"Dow Jones": "Dow Jones",
+				"Standards & Poors": "Standards & Poors",
 			}
 			field_choices["journals"] = {
-				"JAN": "January",
-				"INX": "Indices",
-				"LRS": "Low Risk",
-				"NYS": "New York Session",
+				"January": "January",
+				"Indices": "Indices",
+				"Low risk": "Low Risk",
+				"Ney york session": "New York Session",
 			}
 			field_choices["tradingModels"] = {
-				"LSN": "London Snipper",
-				"TTC": "22 Caliber",
-				"ORG": "Opening Range Gap Expansion",
+				"London Snipper": "London Snipper",
+				"22 Caliber": "22 Caliber",
+				"Opening Range Gap Expansion": "Opening Range Gap Expansion",
 			}
 			field_choices["entryModels"] = {
-				"BRK": "Breaker-block",
-				"TSP": "Turtle soup",
-				"FVG": "Fair Value Gap",
+				"Breaker block": "Breaker-block",
+				"Turtle soup": "Turtle soup",
+				"Fair value gap": "Fair Value Gap",
 			}
 		else:
 			return Response({"error": "Invalid form identified"}, status=status.HTTP_400_BAD_REQUEST)

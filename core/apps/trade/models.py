@@ -69,10 +69,10 @@ class Trade(models.Model):
 	riskreward_profile 					= models.CharField(verbose_name="reward profile", max_length=4, null=False, blank=False)
 
 	order_type 							= models.CharField(verbose_name="order type", choices=OrderTypes.choices, max_length=3, null=False, blank=False)
-	fill_price 							= models.DecimalField(verbose_name="fill price", max_digits=7, decimal_places=5, null=True, blank=True)
-	exit_price 							= models.DecimalField(verbose_name="exit price", max_digits=7, decimal_places=5, null=True, blank=True)
-	stoploss_price 						= models.DecimalField(verbose_name="fill price", max_digits=7, decimal_places=5, null=True, blank=True)
-	takeprofit_price 					= models.DecimalField(verbose_name="fill price", max_digits=7, decimal_places=5, null=True, blank=True)
+	fill_price 							= models.DecimalField(verbose_name="fill price", max_digits=12, decimal_places=5, null=True, blank=True)
+	exit_price 							= models.DecimalField(verbose_name="exit price", max_digits=12, decimal_places=5, null=True, blank=True)
+	stoploss_price 						= models.DecimalField(verbose_name="fill price", max_digits=12, decimal_places=5, null=True, blank=True)
+	takeprofit_price 					= models.DecimalField(verbose_name="fill price", max_digits=12, decimal_places=5, null=True, blank=True)
 	execution_time						= models.DateTimeField(verbose_name="execution time", auto_now_add=False, null=True, blank=True)
 	exit_time 							= models.DateTimeField(verbose_name="exit time", auto_now_add=False, null=True, blank=True)
 
