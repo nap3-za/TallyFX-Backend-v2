@@ -51,6 +51,7 @@ class Trade(models.Model):
 	trading_model 						= models.CharField(verbose_name="trading model", max_length=50, null=False, blank=False)
 	entry_model  						= models.CharField(verbose_name="entry model", max_length=50, null=False, blank=False)
 
+
 	risk_appetite						= models.CharField(verbose_name="risk appetite", choices=RiskAppetites.choices, max_length=3, null=False, blank=False)
 	riskreward_profile 					= models.CharField(verbose_name="reward profile", choices=RiskRewardProfiles.choices, max_length=3, null=False, blank=False)
 
